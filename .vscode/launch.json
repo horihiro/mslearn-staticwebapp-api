@@ -7,6 +7,15 @@
       "request": "attach",
       "port": 9229,
       "preLaunchTask": "func: host start"
+    },
+    {
+      "type": "msedge",
+      "request": "launch",
+      "name": "Debug React app",
+      "url": "http://localhost:3000",
+      "webRoot": "${workspaceFolder}",
+      "preLaunchTask": "react-start",
+      "postDebugTask": "terminate-react-start",
     }
   ]
 }
