@@ -9,8 +9,14 @@ module.exports = async function (context, req) {
 
   try {
     const newProduct = data.addProduct(product);
-    context.res.status(201).json(newProduct);
+    context.res = {
+      status: 201,
+      body: newProduct
+    };
   } catch (error) {
-    context.res.status(500).send(error);
+    context.res = {
+      status: 500,
+      body: error
+    };
   }
 };

@@ -5,8 +5,14 @@ module.exports = async function (context, req) {
 
   try {
     data.deleteProduct(id);
-    context.res.status(200).json({});
+    context.res = {
+      status: 200,
+      body: {}
+    };
   } catch (error) {
-    context.res.status(500).send(error);
+    context.res = {
+      status: 500,
+      body: error
+    };
   }
 };
